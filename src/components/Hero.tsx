@@ -2,99 +2,69 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-1 bg-gradient-to-br from-green-50 via-yellow-50 to-green-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-          {/* Left column */}
-          <div className="flex flex-col items-start justify-center space-y-8">
-            <div>
-              <h1 className="text-5xl font-serif font-bold text-gray-900 leading-tight mb-4">
-                From Indian farms to
-                <br />
-                <span className="text-green-600">international shelves</span>
-              </h1>
-              <p className="text-lg text-gray-700 mb-6 max-w-xs">
-                Rasaa has earned the trust of partners worldwide delivering pure
-                fruit puree and concentrates since 2003.
-              </p>
-              <button className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 mb-6">
-                Our Products
-              </button>
-            </div>
-            <div className="flex gap-4">
-              <img
-                src="DSC_3786.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
-              <img
-                src="DSC_4016.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
-            </div>
-          </div>
-
-          {/* Center column */}
-          <div className="flex flex-col items-center justify-center relative">
-            {/* Arched text - improved visibility */}
-            <div className="w-full flex justify-center mb-2">
-              <svg width="260" height="60" viewBox="0 0 260 60">
-                <path id="curve" d="M10,45 Q130,10 250,45" fill="transparent" />
+    <section id="home" className="pt-20 bg-gradient-to-br from-green-50 via-yellow-50 to-green-100 min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-col items-center justify-center text-center space-y-12">
+          {/* Main heading and tagline */}
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-7xl font-serif font-bold text-gray-900 leading-tight">
+              From orchards to industries,
+              <br />
+              <span className="text-green-600">we transform nature's harvest into pulp</span>
+            </h1>
+            
+            {/* Arched tagline */}
+            <div className="flex justify-center mb-8">
+              <svg width="400" height="80" viewBox="0 0 400 80">
+                <path id="curve" d="M20,60 Q200,20 380,60" fill="transparent" />
                 <text
-                  width="260"
+                  width="400"
                   style={{
-                    fontSize: "1.25rem",
+                    fontSize: "1.5rem",
                     fontFamily: "serif",
                     fill: "#166534",
+                    fontWeight: "600"
                   }}
                 >
-                  <textPath href="#curve"> Feel the Fruit. Feel Rasaa</textPath>
+                  <textPath href="#curve">Feel the Fruit. Feel Rasaa</textPath>
                 </text>
               </svg>
             </div>
-            {/* Main oval image */}
-            <div className="w-80 h-[500px] rounded-[80px] overflow-hidden shadow-2xl flex items-center justify-center">
-              <img
-                src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="fruits"
-                className="w-full h-full object-cover"
-              />
-            </div>
           </div>
 
-          {/* Right column */}
-          <div className="flex flex-col items-end justify-center space-y-8">
-            <div className="flex gap-4 mb-6">
-              <img
-                src="DSC_6807.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
-              <img
-                src="DSC_3907.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
-            </div>
-            <p className="text-lg text-gray-700 max-w-xs text-right mb-4">
-              Rasaa has earned the trust of partners worldwide delivering pure
-              fruit puree and concentrates since 2003.
-            </p>
-            {/* Rolling number cards */}
-            <div className="flex flex-col gap-3 items-end w-full max-w-xs">
-              <RollingCard
-                label="years of Food Processing Experience"
-                end={20}
-                prefix="● "
-              />
-              <RollingCard label="Ton Daily production" end={250} prefix="● " />
-              <RollingCard
-                label="Metric Ton Storage Space"
-                end={20000}
-                prefix="● "
-              />
-            </div>
+          {/* Center image - larger and more prominent */}
+          <div className="w-96 h-[600px] rounded-[100px] overflow-hidden shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
+            <img
+              src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Premium fruit processing"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* CTA Button */}
+          <div className="pt-8">
+            <button className="bg-green-600 text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Discover Our Products
+            </button>
+          </div>
+
+          {/* Rolling stats */}
+          <div className="flex flex-wrap justify-center gap-8 pt-12">
+            <RollingCard
+              label="Years of Experience"
+              end={20}
+              prefix="● "
+            />
+            <RollingCard 
+              label="Ton Daily Production" 
+              end={250} 
+              prefix="● " 
+            />
+            <RollingCard
+              label="Metric Ton Storage"
+              end={20000}
+              prefix="● "
+            />
           </div>
         </div>
       </div>
@@ -115,9 +85,10 @@ function RollingCard({
   suffix?: string;
 }) {
   const [count, setCount] = useState(0);
+  
   useEffect(() => {
     let start = 0;
-    const duration = 10000;
+    const duration = 3000;
     const increment = end / (duration / 16);
     const timer = setInterval(() => {
       start += increment;
@@ -130,18 +101,19 @@ function RollingCard({
     }, 16);
     return () => clearInterval(timer);
   }, [end]);
+
   return (
-    <div className="bg-gradient-to-r from-green-50 via-white to-green-100 border border-green-400 rounded-xl px-5 py-3 shadow-lg min-w-[140px] text-right flex flex-col items-end transition-all duration-300 hover:shadow-2xl hover:border-green-600">
-      <div className="flex items-center gap-2">
-        <span className="inline-block text-green-600 text-xl font-bold">
+    <div className="bg-white/80 backdrop-blur-sm border border-green-200 rounded-xl px-6 py-4 shadow-lg text-center transition-all duration-300 hover:shadow-xl hover:border-green-400 hover:scale-105">
+      <div className="flex items-center justify-center gap-2 mb-2">
+        <span className="text-green-600 text-lg font-bold">
           {prefix}
         </span>
-        <span className="text-2xl font-extrabold text-gray-900 tracking-tight animate-pulse">
-          {count}
+        <span className="text-3xl font-extrabold text-gray-900 tracking-tight">
+          {count.toLocaleString()}
           {suffix}
         </span>
       </div>
-      <div className="text-xs font-medium text-gray-600 mt-1 tracking-wide uppercase whitespace-normal text-right">
+      <div className="text-sm font-medium text-gray-600 tracking-wide">
         {label}
       </div>
     </div>
