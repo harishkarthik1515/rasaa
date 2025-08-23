@@ -1,29 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Products from './pages/Products';
-import Gallery from './pages/Gallery';
-import Group from './pages/Group';
-import Contact from './pages/Contact';
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Gallery from "./components/Gallery";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Products from "./components/Products";
+import Timeline from "./components/Timeline";
+import GroupCompanies from "./components/GroupCompanies";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/group" element={<Group />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <div className="min-h-screen">
+      <Header />
+      <Hero />
+      <About />
+      <Gallery />
+      <WhyChooseUs />
+      <Products />
+      <Timeline />
+      <GroupCompanies />
+      <Footer />
+    </div>
   );
 }
 
