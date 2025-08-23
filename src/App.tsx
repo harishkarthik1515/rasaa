@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Quality from "./components/Quality";
+import Gallery from "./components/Gallery";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Products from "./components/Products";
 import Timeline from "./components/Timeline";
@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Hero />
       <About />
-      <Quality />
+      <Gallery />
       <WhyChooseUs />
       <Products />
       <Timeline />

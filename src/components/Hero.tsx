@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-1 bg-white">
+    <section id="home" className="pt-1 bg-gradient-to-br from-green-50 via-yellow-50 to-green-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           {/* Left column */}
@@ -54,9 +54,9 @@ const Hero = () => {
               </svg>
             </div>
             {/* Main oval image */}
-            <div className="w-64 h-96 rounded-[60px] overflow-hidden shadow-2xl flex items-center justify-center">
+            <div className="w-80 h-[500px] rounded-[80px] overflow-hidden shadow-2xl flex items-center justify-center">
               <img
-                src="DSC_3872.jpg"
+                src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="fruits"
                 className="w-full h-full object-cover"
               />
