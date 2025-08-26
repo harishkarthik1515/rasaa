@@ -1,108 +1,95 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const heroRef = useRef<HTMLElement | null>(null);
+
   return (
-    <section id="home" className="pt-1 bg-gradient-to-br from-green-50 via-yellow-50 to-green-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-          {/* Left column */}
-          <div className="flex flex-col items-start justify-center space-y-8">
-            <div>
-              <h1 className="text-5xl font-serif font-bold text-gray-900 leading-tight mb-4">
-                From Indian farms to
-                <br />
-                <span className="text-green-600">international shelves</span>
+    <section
+      ref={heroRef}
+      id="home"
+      className="min-h-screen flex items-end -mt-6"
+    >
+      {/* Top colored band */}
+      <div className="w-full bg-green-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            {/* Left column - Text content */}
+            <div className="text-center md:text-left order-2 md:order-1">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-tight mb-6">
+                From orchards to industries,
+                <span className="block mt-2 text-green-600">
+                  we transform nature's harvest into pulp
+                </span>
               </h1>
-              <p className="text-lg text-gray-700 mb-6 max-w-xs">
+
+              <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-xl mx-auto md:mx-0">
                 Rasaa has earned the trust of partners worldwide delivering pure
                 fruit puree and concentrates since 2003.
               </p>
-              <button className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 mb-6">
-                Our Products
-              </button>
-            </div>
-            <div className="flex gap-4">
-              <img
-                src="DSC_3786.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
-              <img
-                src="DSC_4016.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
-            </div>
-          </div>
 
-          {/* Center column */}
-          <div className="flex flex-col items-center justify-center relative">
-            {/* Arched text - improved visibility */}
-            <div className="w-full flex justify-center mb-2">
-              <svg width="260" height="60" viewBox="0 0 260 60">
-                <path id="curve" d="M10,45 Q130,10 250,45" fill="transparent" />
-                <text
-                  width="260"
-                  style={{
-                    fontSize: "1.25rem",
-                    fontFamily: "serif",
-                    fill: "#166534",
-                  }}
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                <Link
+                  to="/products"
+                  className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 inline-block"
                 >
-                  <textPath href="#curve"> Feel the Fruit. Feel Rasaa</textPath>
-                </text>
-              </svg>
-            </div>
-            {/* Main oval image */}
-            <div className="w-80 h-[500px] rounded-[80px] overflow-hidden shadow-2xl flex items-center justify-center">
-              <img
-                src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="fruits"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+                  Explore Products
+                </Link>
+                <Link
+                  to="/contact"
+                  className="border-2 border-green-600 text-green-700 px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition-all duration-300 inline-block"
+                >
+                  Contact Us
+                </Link>
+              </div>
 
-          {/* Right column */}
-          <div className="flex flex-col items-end justify-center space-y-8">
-            <div className="flex gap-4 mb-6">
-              <img
-                src="DSC_6807.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
-              <img
-                src="DSC_3907.jpg"
-                alt="fruit"
-                className="w-28 h-40 object-cover rounded-[40px] shadow-lg"
-              />
+              {/* Key stats with increasing numbers */}
+              <div className="flex flex-wrap gap-6 mt-10 justify-center md:justify-start">
+                <RollingCard label="Years Experience" end={20} prefix="• " />
+                <RollingCard
+                  label="Ton Daily Production"
+                  end={250}
+                  prefix="• "
+                />
+                <RollingCard
+                  label="Metric Ton Storage Space"
+                  end={20000}
+                  prefix="• "
+                />
+              </div>
             </div>
-            <p className="text-lg text-gray-700 max-w-xs text-right mb-4">
-              Rasaa has earned the trust of partners worldwide delivering pure
-              fruit puree and concentrates since 2003.
-            </p>
-            {/* Rolling number cards */}
-            <div className="flex flex-col gap-3 items-end w-full max-w-xs">
-              <RollingCard
-                label="years of Food Processing Experience"
-                end={20}
-                prefix="● "
-              />
-              <RollingCard label="Ton Daily production" end={250} prefix="● " />
-              <RollingCard
-                label="Metric Ton Storage Space"
-                end={20000}
-                prefix="● "
-              />
+
+            {/* Right column - Main image */}
+            <div className="flex justify-center items-center order-1 md:order-2">
+              <div className="relative">
+                {/* Main image only - using project public mango image */}
+                <InteractiveImage
+                  imageSrc="/mango-still-life-removebg-preview.png"
+                  sensorRef={heroRef}
+                />
+              </div>
             </div>
           </div>
+        </div>
+        {/* SVG wave divider to white below */}
+        <div className="-mt-2">
+          <svg
+            viewBox="0 0 1440 120"
+            className="w-full block"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,40 C360,120 720,0 1440,40 L1440,120 L0,120 Z"
+              fill="#ffffff"
+            />
+          </svg>
         </div>
       </div>
     </section>
   );
 };
 
-// RollingCard component
+// RollingCard component for displaying statistics with increasing numbers
 function RollingCard({
   label,
   end,
@@ -115,9 +102,10 @@ function RollingCard({
   suffix?: string;
 }) {
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     let start = 0;
-    const duration = 10000;
+    const duration = 2000; // Reduced duration for faster animation
     const increment = end / (duration / 16);
     const timer = setInterval(() => {
       start += increment;
@@ -128,22 +116,104 @@ function RollingCard({
         setCount(Math.floor(start));
       }
     }, 16);
+
     return () => clearInterval(timer);
   }, [end]);
+
   return (
-    <div className="bg-gradient-to-r from-green-50 via-white to-green-100 border border-green-400 rounded-xl px-5 py-3 shadow-lg min-w-[140px] text-right flex flex-col items-end transition-all duration-300 hover:shadow-2xl hover:border-green-600">
-      <div className="flex items-center gap-2">
-        <span className="inline-block text-green-600 text-xl font-bold">
+    <div
+      className="bg-gradient-to-r from-green-50 via-white to-green-100 border border-green-200 rounded-xl px-4 py-2 shadow-md 
+                   transition-all duration-300 hover:shadow-lg hover:border-green-400 min-w-[140px]"
+    >
+      <div className="flex items-center gap-1 justify-center md:justify-start">
+        <span className="inline-block text-green-600 text-lg font-bold">
           {prefix}
         </span>
-        <span className="text-2xl font-extrabold text-gray-900 tracking-tight animate-pulse">
-          {count}
+        <span className="text-2xl font-bold text-gray-800">
+          {count.toLocaleString()}
           {suffix}
         </span>
       </div>
-      <div className="text-xs font-medium text-gray-600 mt-1 tracking-wide uppercase whitespace-normal text-right">
+      <div className="text-xs font-medium text-gray-600 mt-1 text-center md:text-left">
         {label}
       </div>
+    </div>
+  );
+}
+
+// InteractiveImage: mouse-tilt + giggle animation on hover
+function InteractiveImage({
+  imageSrc,
+  sensorRef,
+}: {
+  imageSrc?: string;
+  sensorRef?: React.RefObject<HTMLElement | null>;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    // choose sensor: external hero/sensorRef or the image wrapper itself
+    const sensorNode = (sensorRef && sensorRef.current) || ref.current;
+    if (!sensorNode) return;
+
+    function onMove(e: MouseEvent) {
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      // Subtler tilt sensitivity
+      const rx = (y / rect.height) * -6; // rotateX (reduced)
+      const ry = (x / rect.width) * 6; // rotateY (reduced)
+      // No zoom/scale — keep scale at 1
+      el.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1)`;
+    }
+
+    function onEnter() {
+      const el = ref.current;
+      if (!el) return;
+      setHovered(true);
+      // No giggle; we rely on mousemove tilt + smooth transition for 3D hover effect
+      el.style.transition = "transform 260ms cubic-bezier(.2,.8,.2,1)";
+    }
+
+    function onLeave() {
+      const el = ref.current;
+      if (!el) return;
+      setHovered(false);
+      // smoothly return to neutral
+      el.style.transition = "transform 600ms cubic-bezier(.2,.8,.2,1)";
+      el.style.transform =
+        "perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)";
+    }
+
+    sensorNode.addEventListener("mousemove", onMove);
+    sensorNode.addEventListener("mouseenter", onEnter);
+    sensorNode.addEventListener("mouseleave", onLeave);
+
+    return () => {
+      sensorNode.removeEventListener("mousemove", onMove);
+      sensorNode.removeEventListener("mouseenter", onEnter);
+      sensorNode.removeEventListener("mouseleave", onLeave);
+    };
+  }, [hovered, sensorRef]);
+
+  return (
+    <div
+      ref={ref}
+      className="inline-block transition-transform duration-300"
+      style={{ willChange: "transform" }}
+    >
+      {/* 3D hover handled via JS mousemove + transitions; no keyframes/giggle */}
+      <img
+        src={
+          imageSrc ||
+          "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800"
+        }
+        alt="Fresh mango"
+        className="block max-w-full w-auto h-auto"
+      />
     </div>
   );
 }

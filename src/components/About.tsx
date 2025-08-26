@@ -1,32 +1,26 @@
 import { ArrowRight, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
+  const bg = "/flux2.png";
   return (
     <section
       id="about"
-      className="relative py-20 bg-gradient-to-br from-green-50 to-orange-50 overflow-hidden"
+      className="relative py-20 overflow-hidden "
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "left center",
+      }}
     >
-      {/* Enhanced Curved top */}
-      <svg
-        className="absolute -top-1 left-0 w-full h-24 z-0"
-        viewBox="0 0 1440 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0,0 L1440,0 L1440,40 C1080,100 360,100 0,40 Z"
-          fill="#ffffff"
-        />
-      </svg>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative group">
+          <div className="relative hidden lg:block">
             <img
-              src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Fruit processing facility"
-              className="w-full h-96 object-cover rounded-3xl shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:scale-105"
+              src="/DSC_4085.jpg"
+              alt="Founder"
+              className="w-full h-96 object-cover rounded-3xl shadow-2xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
               <div className="flex items-center space-x-3">
@@ -43,17 +37,15 @@ const About = () => {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 text-black">
             <div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">
-                About Us
-              </h2>
-              <p className="text-2xl text-green-600 font-semibold italic mb-6">
+              <h2 className="text-4xl font-bold text-black mb-4">About Us</h2>
+              <p className="text-2xl text-gray-800 font-semibold italic mb-6">
                 "Feel the Fruit. Feel Rasaa"
               </p>
             </div>
 
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 leading-relaxed text-gray-800">
               <p>
                 At the heart of our operations is a commitment to delivering
                 fruit-based pulps and concentrates with uncompromised purity and
@@ -73,30 +65,19 @@ const About = () => {
               </p>
             </div>
 
-            <button className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mt-8">
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 mt-8"
+            >
               View More About Us <ArrowRight className="h-5 w-5" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Curved bottom */}
-      <svg
-        className="absolute -bottom-1 left-0 w-full h-24 z-0"
-        viewBox="0 0 1440 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0,120 L1440,120 L1440,80 C1080,20 360,20 0,80 Z"
-          fill="#ffffff"
-        />
-      </svg>
+      {/* Curved decorations removed */}
 
-      {/* Optional: Add floating elements for extra visual appeal */}
-      <div className="absolute top-1/4 left-10 w-20 h-20 bg-green-200 rounded-full opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-orange-200 rounded-full opacity-30 animate-pulse delay-1000"></div>
+      {/* floating round decorations removed */}
     </section>
   );
 };

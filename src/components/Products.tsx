@@ -1,4 +1,5 @@
-import { ArrowRight, Droplets } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const products = [
@@ -38,36 +39,38 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {products.map((product, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 animate-fade-in-up"
-              style={{ animationDelay: `${index * 200}ms` }}
+              className="group relative overflow-hidden rounded-lg bg-gray-100 shadow-md cursor-pointer"
+              style={{ animationDelay: `${index * 120}ms` }}
             >
-              <div className="relative h-80">
+              <div className="relative h-64 md:h-80">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 transform-gpu will-change-transform group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-300"></div>
 
-                <div className="absolute top-4 right-4 animate-pulse">
-                  <div className="bg-white/20 backdrop-blur-sm p-2 rounded-full">
-                    <Droplets className="h-6 w-6 text-white" />
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                  <p className="text-sm opacity-90 mb-4">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                  <img
+                    src="/drink.png"
+                    alt="icon"
+                    className="mb-2 w-8 h-8 object-contain filter brightness-0 invert opacity-90"
+                  />
+
+                  <h3 className="text-lg md:text-xl text-white font-bold tracking-wide mb-2">
+                    {product.name}
+                  </h3>
+
+                  <div className="w-8 h-0.5 bg-white/90 mb-3" />
+
+                  <div className="text-xs text-white/90 max-w-xs opacity-90 hidden md:block">
                     {product.description}
-                  </p>
-
-                  <button className="flex items-center gap-2 text-sm font-semibold bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110">
-                    Learn More <ArrowRight className="h-4 w-4" />
-                  </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,9 +78,12 @@ const Products = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
+          <Link
+            to="/products"
+            className="inline-flex bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 items-center gap-2"
+          >
             View All Products <ArrowRight className="h-5 w-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

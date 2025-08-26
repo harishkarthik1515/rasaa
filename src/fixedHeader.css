@@ -1,0 +1,12 @@
+/* Add this to the end of your index.css file */
+
+/* Padding for fixed header */
+main.page-content {
+  padding-top: 5rem; /* Adjust based on your header height */
+}
+
+@media (min-width: 768px) {
+  main.page-content {
+    padding-top: 6rem; /* Slightly more padding on larger screens */
+  }
+}

@@ -1,7 +1,13 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const quickLinks = ["Home", "About us", "Our group", "Gallery", "Contact"];
+  const quickLinks = [
+    { label: "Home", path: "/" },
+    { label: "Products", path: "/products" },
+    { label: "Gallery", path: "/gallery" },
+    { label: "Contact", path: "/contact" },
+  ];
 
   const products = [
     "Aseptic Totapuri mango",
@@ -55,12 +61,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to={link.path}
                     className="text-gray-300 hover:text-green-400 transition-colors"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
