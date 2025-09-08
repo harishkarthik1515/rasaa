@@ -5,62 +5,32 @@ const GalleryPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const galleryImages = [
-    {
-      src: "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Fresh mangoes in processing facility",
-      title: "Premium Mango Processing",
-      description:
-        "State-of-the-art facility for processing the finest mangoes into premium pulp and concentrates.",
-    },
-    {
-      src: "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Fruit pulp production line",
-      title: "Advanced Production Line",
-      description:
-        "Modern machinery ensuring consistent quality and purity in every batch of fruit pulp.",
-    },
-    {
-      src: "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Quality control laboratory",
-      title: "Quality Assurance Lab",
-      description:
-        "Rigorous testing and quality control to maintain international standards.",
-    },
-    {
-      src: "https://images.pexels.com/photos/1002543/pexels-photo-1002543.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Fresh tropical fruits",
-      title: "Farm Fresh Ingredients",
-      description:
-        "Sourcing the finest tropical fruits directly from trusted farmers.",
-    },
-    {
-      src: "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Packaging facility",
-      title: "Modern Packaging Unit",
-      description:
-        "Hygienic packaging processes ensuring product safety and freshness.",
-    },
-    {
-      src: "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Storage warehouse",
-      title: "Temperature Controlled Storage",
-      description:
-        "Advanced storage facilities maintaining optimal conditions for product quality.",
-    },
-    {
-      src: "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Export ready products",
-      title: "Export Quality Products",
-      description:
-        "Ready-to-ship products meeting international export standards.",
-    },
-    {
-      src: "https://images.pexels.com/photos/1002543/pexels-photo-1002543.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Team at work",
-      title: "Dedicated Team",
-      description:
-        "Skilled professionals committed to delivering excellence in every process.",
-    },
+    { src: "/image1.png" },
+    { src: "/image2.png" },
+    { src: "/image3.png" },
+    { src: "/image4.png" },
+    { src: "/image5.png" },
+    { src: "/image6.png" },
+    { src: "/image7.png" },
+    { src: "/image8.png" },
+    { src: "/image9.png" },
+    { src: "/image10.png" },
+    { src: "/image11.png" },
+    { src: "/image12.png" },
+    { src: "/image13.png" },
+    { src: "/image14.png" },
+    { src: "/image15.png" },
+    { src: "/image16.png" },
+    { src: "/image17.png" },
+    { src: "/image18.png" },
+    { src: "/image19.png" },
+    { src: "/image20.png" },
+    { src: "/image21.png" },
+    { src: "/image22.png" },
+    { src: "/image23.png" },
+    { src: "/image24.png" },
+    { src: "/image25.png" },
+    { src: "/image26.png" },
   ];
 
   // Auto-slide functionality
@@ -106,28 +76,25 @@ const GalleryPage = () => {
         {/* Modern Slideshow Container */}
         <div className="relative max-w-4xl mx-auto">
           <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl bg-white">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img
+                src={galleryImages[currentIndex].src}
+                alt="Background Image"
+                className="w-full h-full object-cover opacity-20" // Background image with reduced opacity
+              />
+            </div>
+
             {/* Main Image */}
             <div className="relative w-full h-full">
               <img
                 src={galleryImages[currentIndex].src}
-                alt={galleryImages[currentIndex].alt}
-                className="w-full h-full object-cover transition-all duration-700 ease-in-out"
+                alt="Gallery Image"
+                className="w-full h-full object-contain transition-all duration-700 ease-in-out" // Main image
               />
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>
-
-              {/* Content on Left Bottom */}
-              <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white max-w-md">
-                <div className="transform translate-y-0 transition-all duration-500">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">
-                    {galleryImages[currentIndex].title}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-200 leading-relaxed">
-                    {galleryImages[currentIndex].description}
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Navigation Arrows */}
@@ -189,7 +156,7 @@ const GalleryPage = () => {
               >
                 <img
                   src={image.src}
-                  alt={image.alt}
+                  alt="Gallery Thumbnail"
                   className="w-full h-full object-cover"
                 />
               </button>

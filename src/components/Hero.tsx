@@ -5,11 +5,7 @@ const Hero = () => {
   const heroRef = useRef<HTMLElement | null>(null);
 
   return (
-    <section
-      ref={heroRef}
-      id="home"
-      className="min-h-screen flex items-end -mt-6"
-    >
+    <section ref={heroRef} id="home">
       {/* Top colored band */}
       <div className="w-full bg-green-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">

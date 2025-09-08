@@ -5,22 +5,19 @@ const Products = () => {
   const products = [
     {
       name: "Totapuri Mango Pulp and Concentrate",
-      image:
-        "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image26.png",
       description:
         "Premium quality Totapuri mango pulp with natural sweetness and authentic taste",
     },
     {
       name: "Alphonso Mango Pulp",
-      image:
-        "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image8.png",
       description:
         "King of mangoes - Alphonso pulp with rich flavor and golden color",
     },
     {
       name: "Sindura Mango Pulp",
-      image:
-        "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image6.png",
       description:
         "Traditional Sindura variety with unique taste profile and vibrant color",
     },

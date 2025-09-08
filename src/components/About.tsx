@@ -6,12 +6,12 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-20 overflow-hidden "
+      className="relative py-0 overflow-hidden "
       style={{
         backgroundImage: `url(${bg})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover" /* Changed from "contain" to "cover" */,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "left center",
+        backgroundPosition: "center center" /* Changed to center the image */,
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

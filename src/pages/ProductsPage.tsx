@@ -4,78 +4,49 @@ const ProductsPage = () => {
   const products = [
     {
       name: "Aseptic Totapuri Mango",
-      image:
-        "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image26.png",
       description:
         "Premium quality aseptic Totapuri mango pulp with natural sweetness and authentic taste",
     },
     {
       name: "Aseptic Alphonso Mango",
-      image:
-        "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image8.png",
       description:
         "King of mangoes - Aseptic Alphonso pulp with rich flavor and golden color",
     },
     {
       name: "Aseptic Sindura Mango",
-      image:
-        "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image6.png",
       description:
         "Traditional aseptic Sindura variety with unique taste profile and vibrant color",
     },
     {
       name: "Aseptic Neelam Mango",
-      image:
-        "https://images.pexels.com/photos/1002543/pexels-photo-1002543.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image7.png",
       description:
         "Sweet and aromatic aseptic Neelam mango variety perfect for juices and desserts",
     },
     {
-      name: "Totapuri Mango Concentrate",
-      image:
-        "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description:
-        "Concentrated Totapuri mango with enhanced flavor intensity for industrial applications",
-    },
-    {
       name: "Green Mango Pulp",
-      image:
-        "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image1.png",
       description:
         "Tangy green mango pulp ideal for chutneys, pickles and savory applications",
     },
     {
       name: "White Guava Puree",
-      image:
-        "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image17.png",
       description:
         "Smooth white guava puree with balanced sweetness and characteristic aroma",
     },
     {
-      name: "White Guava Concentrate",
-      image:
-        "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description:
-        "Concentrated white guava with intensified flavor for beverage applications",
-    },
-    {
       name: "Red Papaya Puree",
-      image:
-        "https://images.pexels.com/photos/1002543/pexels-photo-1002543.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image13.png",
       description:
         "Vibrant red papaya puree rich in nutrients and natural sweetness",
     },
     {
-      name: "Red Papaya Concentrate",
-      image:
-        "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description:
-        "Concentrated red papaya with enhanced nutritional value and flavor",
-    },
-    {
       name: "Tomato Paste",
-      image:
-        "https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/image4.png",
       description:
         "Concentrated tomato paste with deep flavor and rich color for culinary applications",
     },
