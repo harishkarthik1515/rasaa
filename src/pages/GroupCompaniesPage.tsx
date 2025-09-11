@@ -118,9 +118,11 @@ const GroupCompaniesPage = () => {
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center">
-                  <span className="text-green-600 text-xs font-bold text-center">
-                    SSR Logo
-                  </span>
+                  <img
+                    src="ssragro.png"
+                    alt="SSR Agro Logo"
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold text-gray-800">
@@ -145,13 +147,11 @@ const GroupCompaniesPage = () => {
               </a>
             </div>
             <div className="flex justify-center">
-              <div className="w-80 h-64 bg-gradient-to-br from-green-100 to-green-200 rounded-3xl flex items-center justify-center shadow-lg">
-                <span className="text-gray-600 text-center">
-                  SSR Agro
-                  <br />
-                  Image
-                </span>
-              </div>
+              <img
+                src="ssragro.png"
+                alt="SSR Agro Logo"
+                className="w-26 h-26 object-contain"
+              />
             </div>
           </div>
         </div>
@@ -160,13 +160,11 @@ const GroupCompaniesPage = () => {
         <div className="mb-24">
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <div className="order-2 lg:order-1 flex justify-center">
-              <div className="w-80 h-64 bg-gradient-to-br from-red-100 to-red-200 rounded-3xl flex items-center justify-center shadow-lg">
-                <span className="text-gray-600 text-center">
-                  iSpeed Motors
-                  <br />
-                  Image
-                </span>
-              </div>
+              <img
+                src="ispeed.png"
+                alt="iSpeed Motors Logo"
+                className="w-26 h-26  flex object-contain"
+              />
             </div>
             <div className="order-1 lg:order-2 lg:col-span-2 space-y-6">
               <div className="flex items-center gap-4 mb-6">
@@ -200,11 +198,11 @@ const GroupCompaniesPage = () => {
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center">
-                  <span className="text-purple-600 text-xs font-bold text-center">
-                    Katur Logo
-                  </span>
-                </div>
+                <img
+                  src="dragonfruit.png"
+                  alt="DY Poultry Farms Logo"
+                  className="w-12 h-12 object-contain"
+                />
                 <div>
                   <h2 className="text-3xl font-bold text-gray-800">
                     Katur Farm Fresh
@@ -222,11 +220,11 @@ const GroupCompaniesPage = () => {
             </div>
             <div className="flex justify-center">
               <div className="w-80 h-64 bg-gradient-to-br from-purple-100 to-pink-200 rounded-3xl flex items-center justify-center shadow-lg">
-                <span className="text-gray-600 text-center">
-                  Katur Farm Fresh
-                  <br />
-                  Image
-                </span>
+                <img
+                  src="dragonfruit.png"
+                  alt="dragon fruit"
+                  className="w-26 h-26 object-contain"
+                />
               </div>
             </div>
           </div>
